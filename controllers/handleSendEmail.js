@@ -13,8 +13,11 @@ const mailOptions = {
   from: 'Reset Password @resetpassword.com <donotreply@resetpassword.com>',
   to: userEmail,
   subject: 'Reset Password',
-  text: 'link',
-  html: `<a href=${link}>Click here to reset password</a>`
+  text: `${link}`,
+  html: `<p><a href=${link}>Click here to reset password</a><br/>
+            If above link is not clickable kindly, copy below url and paste it in browser<br/>
+            ${link}
+        <p>`
 };
 
 transporter.sendMail(mailOptions, function(error, info){
